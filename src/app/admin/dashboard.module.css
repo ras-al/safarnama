@@ -1,0 +1,88 @@
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.statCard {
+  background: var(--paper-white);
+  border: 1px solid var(--border-light);
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px var(--paper-shadow);
+  transition: transform 0.15s var(--ease-out);
+  border-radius: 2px;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 10px var(--paper-shadow-md);
+}
+
+.statIcon {
+  margin-bottom: 8px;
+}
+
+.statValue {
+  font-family: var(--font-handwritten);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+  margin-top: 2px;
+}
+
+.actionsGrid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  font-size: 0.8rem;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+.tripInfo {
+  margin-top: 24px;
+}
+
+.tripInfoTitle {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.tripInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-faded);
+}
+
+.infoValue {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+}
+
+@media (max-width: 600px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .tripInfoGrid { grid-template-columns: repeat(2, 1fr); }
+}

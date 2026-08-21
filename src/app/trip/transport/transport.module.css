@@ -1,0 +1,113 @@
+.list { display: flex; flex-direction: column; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.typeBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-blue);
+}
+
+.number {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-faded);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.route {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.station {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.stationName {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+  max-width: 110px;
+}
+
+.stationTime {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.stationDate {
+  font-size: 0.68rem;
+  color: var(--ink-faded);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--kraft-dark);
+  margin-top: 6px;
+}
+
+.dots {
+  width: 20px;
+  border-top: 2px dashed var(--kraft);
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--kraft);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: left;
+}
+
+.detailLabel {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+.detailValue {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.notes {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  padding-top: 8px;
+  border-top: 1px dashed var(--kraft);
+}

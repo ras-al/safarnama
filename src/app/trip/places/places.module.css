@@ -1,0 +1,51 @@
+.list { display: flex; flex-direction: column; gap: 16px; }
+
+.card { padding: 16px; }
+
+.mustVisit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--mustard);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.placeName {
+  font-family: var(--font-handwritten);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  line-height: 1.1;
+}
+
+.city {
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: var(--ink-dark);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+}

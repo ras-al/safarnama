@@ -1,0 +1,14 @@
+{
+  "name": "Safarnama - Trip Companion",
+  "short_name": "Safarnama",
+  "description": "Industrial Visit 2026 - Your complete trip companion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF6E3",
+  "theme_color": "#C4654A",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

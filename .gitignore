@@ -36,6 +36,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# firebase
+.firebase
+firebase-debug.log
+
+# Tesseract OCR Data
+eng.traineddata
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

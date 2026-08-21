@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Safarnama - Industrial Visit (IV) 2026 App
 
-## Getting Started
+Safarnama is a comprehensive, offline-capable Progressive Web Application (PWA) designed to manage, coordinate, and track an entire college Industrial Visit (IV) trip across North India. It serves as a digital scrapbook and a functional companion for 148+ students and faculty.
 
-First, run the development server:
+## Key Features
+*   **Offline-First Architecture**: View your trip itinerary, ticket details, hotel information, and documents even when on a train with zero cellular coverage.
+*   **Live Location Sharing**: Students can broadcast their live GPS location to the group for 15 min, 30 min, or 1 hour. It automatically expires and uses highly accurate `watchPosition` tracking.
+*   **Dynamic Trip Board**: The home dashboard features a progress bar tracking the 16-day journey, quick access to tickets, and important announcements from coordinators.
+*   **Admin Dashboard**: Manage students, send instant push/feed announcements, and monitor live location tracking of all group members in one place.
+*   **Scrapbook UI Aesthetics**: The entire application is styled like a vintage travel scrapbook with paper textures, washi tape, polaroids, and handwritten fonts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
+*   **Frontend**: Next.js 14, React, Lucide Icons
+*   **Styling**: Pure CSS Modules with a custom Neo-Scrapbook design system
+*   **Backend & Data**: Firebase Firestore (for live locations & documents)
+*   **Mapping**: React-Leaflet with OpenStreetMap tiles
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup Instructions
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/your-username/safarnama.git
+    cd safarnama
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3.  **Environment Variables**
+    Create a `.env.local` file in the root directory and add your Firebase credentials:
+    ```
+    NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-auth-domain
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-messaging-id
+    NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4.  **Seed the Database**
+    To upload the student list, itinerary, and basic config to your Firestore database, run:
+    ```bash
+    node scripts/seed.mjs
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5.  **Run Development Server**
+    ```bash
+    npm run dev
+    ```
+    Open `http://localhost:3000` to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage for Students
+1.  **Add to Home Screen**: When opening the app in Safari (iOS) or Chrome (Android), tap "Share" or the menu icon and select "Add to Home Screen". The app will now work offline like a native app.
+2.  **Location Sharing**: If you get separated from the group, go to the Home screen, select your name from the dropdown, choose a duration, and hit Share. Coordinators will instantly see your dot on the map.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Security Notice
+The `/admin` routes are currently unprotected in this repository for development purposes. Before deploying to production, ensure you implement Firebase Authentication logic in `layout.js` or `middleware.js` to restrict access to authorized faculty/coordinators only.

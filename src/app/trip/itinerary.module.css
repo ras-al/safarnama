@@ -1,0 +1,112 @@
+/* Itinerary Styles */
+
+.pageTurn {
+  animation: pageTurnAnim 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pageTurnAnim {
+  0% { opacity: 0; transform: rotateY(15deg) translateX(10px); }
+  100% { opacity: 1; transform: rotateY(0) translateX(0); }
+}
+
+.dayHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--paper-white);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--terracotta);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 6px var(--paper-shadow);
+}
+
+.dayTitle {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  line-height: 1.1;
+}
+
+.dayMeta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  margin-top: 4px;
+}
+
+.dayDate {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--kraft);
+}
+
+/* Activity Card */
+.activityCard {
+  width: 100%;
+  text-align: left;
+  background: var(--paper-white);
+  border: 1px solid var(--border-light);
+  padding: 12px 14px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 4px var(--paper-shadow);
+  cursor: pointer;
+  transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out);
+}
+
+.activityCard:active {
+  transform: translateY(-1px);
+  box-shadow: 2px 3px 8px var(--paper-shadow-md);
+}
+
+.activityHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.activityType {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-dark);
+  border-radius: 50%;
+}
+
+.activityTitle {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+  margin-bottom: 4px;
+}
+
+.activityLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  color: var(--ink-faded);
+}
+
+.activityExpand {
+  display: flex;
+  justify-content: center;
+  color: var(--kraft-dark);
+  margin-top: 6px;
+}
+
+.activityDesc {
+  font-size: 0.8rem;
+  color: var(--ink-faded);
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--kraft);
+}

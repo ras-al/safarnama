@@ -1,0 +1,66 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Config (trip settings) — anyone can read, only admin can write
+    match /config/{docId} {
+      allow read: if true;
+      allow write: if true; // Change to auth-based after initial setup
+    }
+    
+    // Emergency Contacts — anyone can read
+    match /emergencyContacts/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Itinerary — anyone can read
+    match /itinerary/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Transport — anyone can read
+    match /transport/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Hotels — anyone can read
+    match /hotels/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Places — anyone can read
+    match /places/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Participants — anyone can read
+    match /participants/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Announcements — anyone can read
+    match /announcements/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Documents — anyone can read
+    match /documents/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+    
+    // Photos — anyone can read and write (for journal)
+    match /photos/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

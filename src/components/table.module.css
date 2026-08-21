@@ -1,0 +1,66 @@
+.wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  box-shadow: 2px 2px 6px var(--paper-shadow);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper-white);
+  font-size: 0.82rem;
+}
+
+.th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+  background: var(--cream-dark);
+  border-bottom: 2px solid var(--kraft);
+  white-space: nowrap;
+}
+
+.tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.1s;
+}
+
+.tr:hover {
+  background: var(--cream);
+}
+
+.td {
+  padding: 10px 14px;
+  color: var(--ink-dark);
+  vertical-align: middle;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.editBtn {
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-blue);
+  background: var(--cream-dark);
+  border: 1px solid var(--ink-blue);
+  border-radius: 2px;
+}
+
+.deleteBtn {
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--stamp-red);
+  background: var(--cream-dark);
+  border: 1px solid var(--stamp-red);
+  border-radius: 2px;
+}

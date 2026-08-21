@@ -1,0 +1,35 @@
+.list { display: flex; flex-direction: column; gap: 16px; }
+
+.card { padding-top: 24px; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.time {
+  font-size: 0.68rem;
+  color: var(--ink-faded);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.body {
+  font-size: 0.82rem;
+  color: var(--ink-dark);
+  line-height: 1.6;
+}
+
+.author {
+  font-family: var(--font-handwritten);
+  font-size: 0.9rem;
+  color: var(--ink-faded);
+  margin-top: 10px;
+}

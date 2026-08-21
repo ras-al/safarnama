@@ -1,0 +1,100 @@
+.list { display: flex; flex-direction: column; gap: 20px; }
+
+.card { padding: 0; overflow: hidden; }
+
+.cardHeader {
+  padding: 16px;
+  border-bottom: 1px dashed var(--kraft);
+  position: relative;
+}
+
+.cityStamp {
+  margin-bottom: 6px;
+}
+
+.hotelName {
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  line-height: 1.4;
+}
+
+.cardBody { padding: 16px; }
+
+.timeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.timeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.timeLabel {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+.timeValue {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-dark);
+}
+
+.timeHour {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--terracotta);
+}
+
+.timeDivider {
+  color: var(--kraft);
+}
+
+.wifiRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: var(--cream-dark);
+  border: 1px solid var(--border-light);
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  color: var(--ink-blue);
+}
+
+.wifiText {
+  font-family: monospace;
+  font-size: 0.72rem;
+}
+
+.notes {
+  font-size: 0.75rem;
+  color: var(--ink-faded);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
