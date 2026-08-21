@@ -41,7 +41,7 @@ export const metadata = {
     siteName: 'Safarnama',
     images: [
       {
-        url: '/logo.png',
+        url: 'https://safarnama-iv.vercel.app/logo.png',
         width: 512,
         height: 512,
         alt: 'Safarnama Logo',

@@ -64,6 +64,7 @@ export default function HomePage() {
   const [activeLocations, setActiveLocations] = useState({});
   const [myLocation, setMyLocation] = useState(null);
   const [currentCity, setCurrentCity] = useState('');
+  const [weather, setWeather] = useState({ temp: '--', isSunny: true });
   const watchIdRef = useRef(null);
 
   useEffect(() => {
@@ -107,9 +108,29 @@ export default function HomePage() {
     return () => unsub();
   }, []);
 
-
   const currentDayData = itinerary.find(d => d.day === trip.currentDay);
   const nextDay = itinerary.find(d => d.day === trip.currentDay + 1);
+
+  useEffect(() => {
+    // Fetch real weather using mapCenter or cityCoordinates
+    const currentLoc = currentDayData?.location?.split(',')[0]?.trim();
+    const coords = myLocation || cityCoordinates[currentLoc] || cityCoordinates['Ernakulam'];
+    
+    if (coords) {
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coords[0]}&longitude=${coords[1]}&current_weather=true`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.current_weather) {
+            const code = data.current_weather.weathercode;
+            setWeather({
+              temp: Math.round(data.current_weather.temperature),
+              isSunny: code <= 3 // WMO code 0-3 is clear to partly cloudy
+            });
+          }
+        })
+        .catch(err => console.error('Failed to fetch weather', err));
+    }
+  }, [myLocation, currentDayData]);
 
   const locationMarkers = Object.values(activeLocations).map(loc => ({
     position: [loc.lat, loc.lng],
@@ -203,8 +224,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className={styles.weatherChip}>
-            <Sun size={16} />
-            <span>32°C</span>
+            {weather.isSunny ? <Sun size={16} /> : <Cloud size={16} />}
+            <span>{weather.temp}°C</span>
           </div>
         </div>
         
