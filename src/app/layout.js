@@ -26,12 +26,29 @@ const inter = Inter({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://safarnama-iv.vercel.app'),
   title: 'Safarnama - Department of CSE TKMCE',
   description: 'Industrial Visit 2026 - Trip management, itinerary, transport, and coordination app for students',
   manifest: '/manifest.json',
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
+  },
+  openGraph: {
+    title: 'Safarnama - Department of CSE TKMCE',
+    description: 'Industrial Visit 2026 - Trip management, itinerary, transport, and coordination app for students',
+    url: 'https://safarnama-iv.vercel.app',
+    siteName: 'Safarnama',
+    images: [
+      {
+        url: '/logo.png',
+        width: 512,
+        height: 512,
+        alt: 'Safarnama Logo',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
   },
   appleWebApp: {
     capable: true,
