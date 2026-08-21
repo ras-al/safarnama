@@ -19,7 +19,7 @@ Safarnama is a comprehensive, offline-capable Progressive Web Application (PWA) 
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/your-username/safarnama.git
+    git clone https://github.com/ras-al/safarnama.git
     cd safarnama
     ```
 
