@@ -43,6 +43,16 @@ export default function AdminParticipants() {
     }
   };
 
+  const handleDelete = async (row) => {
+    if (confirm(`Are you sure you want to delete ${row.name}?`)) {
+      try {
+        await deleteDoc(doc(db, 'participants', row.id));
+      } catch (e) {
+        alert('Failed to delete');
+      }
+    }
+  };
+
   return (
     <div>
       <div className="flex-between" style={{ marginBottom: 16 }}>
@@ -56,6 +66,7 @@ export default function AdminParticipants() {
         columns={columns} 
         data={participants || []} 
         onEdit={handleEdit} 
+        onDelete={handleDelete}
       />
 
       {editingRow && (

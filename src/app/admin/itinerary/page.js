@@ -63,6 +63,22 @@ export default function AdminItinerary() {
     }
   };
 
+  const handleDelete = async (row) => {
+    if (confirm(`Are you sure you want to delete "${row.title}"?`)) {
+      try {
+        const dayDoc = itinerary.find(d => d.id === row.dayId);
+        if (!dayDoc) throw new Error("Day not found");
+        
+        const updatedActivities = dayDoc.activities.filter(a => a.id !== row.id);
+        const ref = doc(db, 'itinerary', row.dayId);
+        await updateDoc(ref, { activities: updatedActivities });
+      } catch (error) {
+        console.error('Error deleting activity:', error);
+        alert('Failed to delete activity');
+      }
+    }
+  };
+
   return (
     <div>
       <div className="flex-between" style={{ marginBottom: 16 }}>
@@ -76,6 +92,7 @@ export default function AdminItinerary() {
         columns={columns} 
         data={allActivities} 
         onEdit={handleEdit} 
+        onDelete={handleDelete}
       />
 
       {editingRow && (

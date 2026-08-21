@@ -139,8 +139,29 @@ export function AppDataProvider({ children }) {
     }
   }, [mode]);
 
+  // --- Calculate dynamic current day ---
+  let finalTripData = { ...data.trip };
+  if (finalTripData?.startDate) {
+    const start = new Date(finalTripData.startDate);
+    start.setHours(0, 0, 0, 0);
+    const now = new Date();
+    
+    // For testing purposes, we can override the 'now' date if needed, but we'll use real time here
+    now.setHours(0, 0, 0, 0);
+
+    if (now >= start) {
+      const diffTime = now.getTime() - start.getTime();
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+      finalTripData.currentDay = Math.max(1, Math.min(diffDays, finalTripData.totalDays || 16));
+    } else {
+      // If trip hasn't started yet, default to Day 1
+      finalTripData.currentDay = 1;
+    }
+  }
+
   const value = {
     ...data,
+    trip: finalTripData,
     mode,
     isOfflineReady,
     downloadProgress,
